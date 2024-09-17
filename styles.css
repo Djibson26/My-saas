@@ -1,0 +1,193 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4eeee;
+    color: #fff;
+    padding: 20px;
+}
+
+header {
+    text-align: left; /* Align header content to the left */
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    position: absolute;
+    top: 0;
+    left: 20px; /* Adjust for left corner */
+    margin: 0;
+    z-index: 10;
+}
+
+.toolbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding-top: 100px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.toolbar ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    flex-wrap: wrap; /* Wrap the niches for smaller screens */
+    gap: 10px; /* Add gap between niches */
+    margin-left: auto; /* Align niches to the right */
+}
+
+.toolbar ul li {
+    margin: 0;
+}
+
+.toolbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+    display: block;
+}
+
+.toolbar ul li a.active {
+    background-color: #ff0000;
+    border-radius: 5px;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+input[type="range"] {
+    width: 150px;
+}
+
+#rangeLabel, #mobileRangeLabel {
+    font-weight: bold;
+}
+
+.container {
+    margin-top: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.profile-card {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    border: 2px solid #ff1900;
+    width: 300px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.profile-card:hover {
+    transform: scale(1.05);
+}
+
+.profile-card img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+}
+
+.profile-details {
+    display: flex;
+    align-items: center;
+}
+
+.channel-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.subscriber-count {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.channel-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color:  #ff0000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.channel-link:hover {
+    background-color: #fd3434;
+}
+
+/* Mobile Filter Bar */
+#mobileFilterBar {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+#mobileFilterBar input[type="range"] {
+    width: 80%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #mobileFilterBar {
+        display: block;
+    }
+
+    .filter-container {
+        display: none;
+    }
+
+    h1 {
+        font-size: 20px; /* Adjust for smaller screens */
+        left: 10px;
+        top: 15px;
+    }
+
+    .toolbar ul {
+        gap: 5px;
+        justify-content: center;
+    }
+
+    .toolbar ul li a {
+        font-size: 1rem; /* Adjust font size for niche names on smaller screens */
+    }
+}
